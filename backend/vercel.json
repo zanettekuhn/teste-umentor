@@ -1,11 +1,11 @@
 {
     "functions": {
-      "api/index.php": {
+      "api/teste_umentor.php": {
         "runtime": "vercel-php@0.7.3"
       }
     },
     "routes": [
-      { "src": "/(.*)", "dest": "/api/index.php" }
+      { "src": "/(.*)", "dest": "/api/teste_umentor.php" }
     ],
     "build": {
       "env": {
