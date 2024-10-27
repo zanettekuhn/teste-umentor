@@ -13,7 +13,6 @@ const DinamicTable = ({ tableData, handleEdit, fetchUsers }) => {
       const resp = await axios.delete(`${backUrl}/?id=${id}`);
       if (resp.status == 200) {
         fetchUsers();
-        console.log('excluiu ja era');
       }
     } catch (error) {
       console.error('Erro ao excluir o usuário:', error);

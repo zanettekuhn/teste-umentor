@@ -49,7 +49,6 @@ const App = () => {
   const fetchUsers = async () => {
     try {
       const response = await axios.get(backUrl);
-      console.log(response.data)
       setTableData(response.data);
 
     } catch (error) {
