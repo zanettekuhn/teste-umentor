@@ -1,0 +1,35 @@
+.bg-umentor {
+    background-color: #5e0185;
+}
+
+.color-umentor {
+    color: #5e0185;
+}
+
+.bg-umentor-yellow {
+    background-color: #efec03;
+}
+
+.bg-umentor-cinza {
+    background-color: #eee;
+}
+
+.btn-umentor {
+    background-color: #efec03;
+    transition: background-color 1s ease;
+    border: none;
+    color: #5e0185;
+    border-radius: 2rem;
+}
+
+.btn-umentor:hover {
+    background-color: #5e0185;
+    border-color: #5e0185;
+}
+
+* {
+    font-family: Epilogue, sans-serif;
+}
+.modal-content {
+    border: 0;
+}
