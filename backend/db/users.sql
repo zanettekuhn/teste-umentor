@@ -1,3 +1,7 @@
+CREATE DATABASE `teste_umentor`;
+
+USE teste_umentor;
+
 CREATE TABLE `users` (
 	`id` INT(11) NOT NULL AUTO_INCREMENT COMMENT 'Primare key',
 	`name` VARCHAR(50) NOT NULL COMMENT 'Column containing the users name' COLLATE 'utf8mb4_general_ci',

@@ -3,9 +3,9 @@ header("Access-Control-Allow-Origin: *");
 header('Access-Control-Allow-Headers: Content-Type');
 header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");
 
-$servername = "127.0.0.1";
-$username = "root";
-$password = "";
+$servername = "database-teste-umentor.cvm4oew2qe96.us-east-2.rds.amazonaws.com";
+$username = "admin";
+$password = "j1VEfksWNlG00miDTjWI";
 $dbname = "teste_umentor";
 $port = "3306";
 
