@@ -21,7 +21,9 @@ Este projeto é uma aplicação frontend construída com React + Vite com um bac
     ```
 - Inicie a aplicação:
     ```bash
-    npm run dev
+    npm run build
+
+    npm run preview
     ```
 
 - Configuração do Backend (PHP)
