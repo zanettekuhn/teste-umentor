@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Modal, Button, Form, Container, Row, Col } from 'react-bootstrap';
+import { Modal, Button, Form, Container, Row, Col, Spinner } from 'react-bootstrap';
 import DinamicTable from './components/DinamicTable';
 import * as Yup from 'yup';
 import { useForm } from 'react-hook-form';
@@ -28,6 +28,7 @@ const validationSchema = Yup.object().shape({
 });
 
 function formatDate(data) {
+  if (!data) return '';
   const date = new Date(data.replace(' ', 'T'));
   const year = date.getFullYear();
   const month = String(date.getMonth() + 1).padStart(2, '0');
@@ -41,6 +42,7 @@ const App = () => {
   const [tableData, setTableData] = useState([]);
   const [editUserId, setEditUserId] = useState(true);
   const [filterText, setFilterText] = useState('');
+  const [loading, setLoading] = useState(false);
 
   const { register, handleSubmit, reset, setValue, formState: { errors } } = useForm({
     resolver: yupResolver(validationSchema)
@@ -57,9 +59,9 @@ const App = () => {
   };
   useEffect(() => {
 
-    return () => {
-      fetchUsers();
-    };
+    // return () => {
+    fetchUsers();
+    // };
   }, []);
 
   const toggleModal = (data = null) => {
@@ -89,6 +91,7 @@ const App = () => {
 
   const onSubmit = async (data) => {
     try {
+      setLoading(true);
       if (editUserId) {
         const result = await Swal.fire({
           title: 'Tem certeza?',
@@ -125,6 +128,8 @@ const App = () => {
       toggleModal();
     } catch (error) {
       console.error('Erro no submit do formulario: ', error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -195,8 +200,8 @@ const App = () => {
               </Col>
             </Row>
 
-            <Button type="submit" className="mt-3 px-5 btn-umentor fw-bold float-end">
-              Salvar
+            <Button type="submit" className="mt-3 px-5 btn-umentor fw-bold float-end" disabled={loading}>
+              {loading ? <Spinner className="color-umentor bg-light" as="span" size="sm" animation="border" /> : 'Salvar'}
             </Button>
           </Form>
         </Modal.Body>

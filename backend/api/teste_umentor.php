@@ -52,16 +52,10 @@ switch ($method) {
         break;
 }
 
-function listUsers($conn, $id = null)
+function listUsers($conn)
 {
-    if ($id) {
-        $sql = "SELECT id, name, email, situation, date_admission, date_created, date_updated FROM users WHERE id = ?";
-        $prepare = mysqli_prepare($conn, $sql);
-        mysqli_stmt_bind_param($prepare, 'i', $id);
-    } else {
-        $sql = "SELECT id, name, email, situation, date_admission, date_created, date_updated FROM users";
-        $prepare = mysqli_prepare($conn, $sql);
-    }
+    $sql = "SELECT id, name, email, situation, date_admission, date_created, date_updated FROM users";
+    $prepare = mysqli_prepare($conn, $sql);
 
     mysqli_stmt_execute($prepare);
     mysqli_stmt_store_result($prepare);

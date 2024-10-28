@@ -30,6 +30,21 @@
 * {
     font-family: Epilogue, sans-serif;
 }
+
 .modal-content {
     border: 0;
+}
+
+.btn-umentor:disabled {
+    background-color: #dcd8d8;
+    border-color: transparent;
+    color: #929191;
+}
+
+.btn-umentor:disabled .spinner-border {
+    border-color: var(--color-umentor) transparent transparent transparent;
+}
+
+.btn-umentor:disabled:hover {
+    cursor: not-allowed;
 }
